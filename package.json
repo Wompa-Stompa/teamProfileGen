@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.1.0",
+    "jest": "^28.1.3"
+  },
+  "name": "teamprofilegen",
+  "description": "Team Profile Generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wompa-Stompa/teamProfileGen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wompa-Stompa/teamProfileGen/issues"
+  },
+  "homepage": "https://github.com/Wompa-Stompa/teamProfileGen#readme"
+}
