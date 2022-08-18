@@ -1,8 +1,9 @@
-const inquirer = require('inquirer');
+const pageTemplate = require('./pageTemplate.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Employee = require('./lib/Employee.js');
+const inquirer = require('inquirer');
 const fs = require('fs');
 
 var employees = [];
@@ -149,11 +150,11 @@ const menu = function () {
         {
             type: 'confirm',
             name: 'confirmAddEmployee',
-            message: 'Would you like to add another employee?',
+            message: 'Would you like to add an employee?',
             default: false
         }
-
-    ])
+  ])
+      
     .then(employeesData => {
         let { name , id, email, role, github, school, confirmAddEmployee} = employeesData;
         let employee;
@@ -175,3 +176,17 @@ const menu = function () {
     })
     
 };
+
+managerProfile()
+.then(menu)
+.then(data => {
+    const pageHTML = pageTemplate(data)
+ fs.writeFile('./index.html', pageHTML, err => {
+     if (err) {
+         console.log(err);
+            return;
+        } else {
+            console.log("Page created.")
+        }
+    })
+});
